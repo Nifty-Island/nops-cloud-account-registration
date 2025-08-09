@@ -92,7 +92,7 @@ Resources:
     Properties:
       Description: Copies nOps Cloudtrail Forwarder zip to the destination S3 bucket
       Handler: index.handler
-      Runtime: python3.9
+      Runtime: python3.13
       Timeout: 300
       Code:
         ZipFile: |
@@ -210,7 +210,7 @@ Resources:
       PackageType: Zip
       Handler: "generate_external_id.cloudformation_handler"
       Role: !GetAtt nopsLambdaExecutionRole.Arn
-      Runtime: "python3.9"
+      Runtime: "python3.13"
       Timeout: 150
       FunctionName: "generate-external-id"
     DependsOn:
@@ -486,7 +486,7 @@ Resources:
       PackageType: Zip
       Handler: "nops_register_aws_acc.cloudformation_handler"
       Role: !GetAtt nopsLambdaExecutionRole.Arn
-      Runtime: "python3.9"
+      Runtime: "python3.13"
       Timeout: 150
       FunctionName: "nops-register-aws-account"
       Environment:
